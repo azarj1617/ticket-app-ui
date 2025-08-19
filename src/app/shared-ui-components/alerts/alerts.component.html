@@ -1,0 +1,6 @@
+<div *ngIf="isAlert" class="alert alert-dismissible fade show" [ngClass]="alertType" role="alert">
+    <div *ngIf="alertData?.header"><strong>{{alertData?.header}}</strong></div>
+    <div><span>{{alertData?.message}}</span></div>
+    
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>

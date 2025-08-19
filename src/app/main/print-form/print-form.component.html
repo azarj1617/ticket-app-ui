@@ -1,0 +1,27 @@
+<div class="container loader">
+    <div *ngIf="alert" class="row justify-content-center mt-3">
+        <div class="col-md-4">
+            <app-alerts [isAlert]="alert" [alertData]="alertData"></app-alerts>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-2">
+        <div class="col-md-6">
+            <label for="">Upload Files Here</label>
+            <div class="input-group mb-3 mt-2">
+                <input type="file" class="form-control" id="printDataFile"
+                    (change)="fileUploadFun($event)" accept=".xls,.xlsx">
+                <label class="input-group-text" for="printDataFile">Upload</label>
+            </div>
+            <div style="display: flex;justify-content: end;">
+                <button class="btn btn-sm btn-info"
+                 style="margin-right: 6px;" (click)="resetFun()">Reset</button>
+                <button class="btn btn-sm btn-info" [disabled]="!uploadFile"
+                 style="margin-right: 6px;" (click)="submitFun('print')">Print</button>
+                <button class="btn btn-sm btn-info" [disabled]="!uploadFile"
+                    (click)="submitFun('download')">Download</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
