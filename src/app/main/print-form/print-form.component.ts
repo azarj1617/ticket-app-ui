@@ -54,6 +54,7 @@ export class PrintFormComponent implements OnInit {
             this.resetFun();
         }else{
             print({ printable: res?.pdfData, type: 'pdf', base64: true });
+            this.resetFun();
         }
       }else{
          this.activateAlert('W',res?.message,5000); 
