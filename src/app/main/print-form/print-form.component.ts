@@ -12,6 +12,7 @@ export class PrintFormComponent implements OnInit {
   formData:any;
   alert:boolean = false;
   alertData:any={};
+  selectedDesign:number = 1;
   constructor(private printService:PrintApiService,private sharedService:SharedService) { }
 
   ngOnInit(): void {
@@ -40,7 +41,11 @@ export class PrintFormComponent implements OnInit {
       return;
     }
     this.sharedService?.showLoader();
-    this.printService.printPdf(this.formData).subscribe((res:any) => {
+    let data = {
+      formData:this.formData,
+      design:this.selectedDesign
+    }
+    this.printService.printPdf(data).subscribe((res:any) => {
       this.sharedService?.hideLoader();
       if(res?.status?.toLowerCase()=='success'){
         

@@ -9,6 +9,6 @@ export class PrintApiService {
   constructor(private restService: RestService) {}
 
   printPdf(data: any) {
-    return this.restService.postMethod('ticket-print', data);
+    return this.restService.postMethod(`ticket-print?designId=${data.design}`, data.formData);
   }
 }
