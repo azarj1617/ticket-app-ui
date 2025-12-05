@@ -11,4 +11,7 @@ export class PrintApiService {
   printPdf(data: any) {
     return this.restService.postMethod(`ticket-print?designId=${data.design}`, data.formData);
   }
+  ticketPrint(data:any){
+    return this.restService.postMethod(`ticket-print-data`, data);
+  }
 }
