@@ -1,0 +1,15 @@
+.table-scroll {
+  height: 90vh;       /* set your desired height */
+  overflow-y: auto;    /* vertical scroll */
+  overflow-x: hidden;  /* optional */
+  display: block;      /* important for scroll */
+}
+thead{
+  position: sticky;
+  background: #fff;
+  top:0;
+}
+
+.invalid-data{
+  border : 1px solid red;
+}
